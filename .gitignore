@@ -55,6 +55,9 @@ sysinfo.txt
 *.apk
 *.unitypackage
 
+# SOUND-FX
+Sound-FX/
+
 # Crashlytics generated file
 crashlytics-build.properties
 
