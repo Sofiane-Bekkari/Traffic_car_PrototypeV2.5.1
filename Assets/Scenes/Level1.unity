@@ -1729,9 +1729,9 @@ MonoBehaviour:
   - {fileID: 2747251654051910843, guid: 4e5ecffb7186a5d44a696c5da5d005d1, type: 3}
   - {fileID: 2747251654051910843, guid: 617009bf7a466ef4eb6902b66906ab26, type: 3}
   - {fileID: 2747251654051910843, guid: ffe000ad6a8b7a144bdc32990490bca8, type: 3}
+  spawnDetails: {fileID: 11400000, guid: 7fecf83a4d63fd3498402e97f8b07169, type: 2}
   firstSpawn: 0
   spawnRate: 7
-  numberOfCarsToSpawn: 3
 --- !u!4 &583085261
 Transform:
   m_ObjectHideFlags: 0

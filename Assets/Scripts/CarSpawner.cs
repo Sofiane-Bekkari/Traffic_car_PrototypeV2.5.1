@@ -6,15 +6,20 @@ public class CarSpawner : MonoBehaviour
 {
 	public Transform[] spawnPoints;
 	public GameObject[] car;
-	bool spawnAllowed;
+	public SpawnDetails spawnDetails;
 	public float firstSpawn = 0f;
 	public float spawnRate = 5f;
-	public int numberOfCarsToSpawn = 4;
-	public static int numberOfCars; //a clone of numberOfCarsToSpawn that will not dicrement-- to access the initial value of numberOfCarsToSpawn in other script
+	public static int numberOfCars; //used for ui and other script
+	int[] carsOrder ;
+	int[] pointsOrder ;
+	bool spawnAllowed;
+	int i = 0;
 
-    private void Awake()
+	private void Awake()
     {
-		numberOfCars = numberOfCarsToSpawn;
+		numberOfCars = spawnDetails.totalCarsNumber;
+		carsOrder = spawnDetails.carsOrder.ToArray();
+		pointsOrder = spawnDetails.spawnOrder.ToArray();
 	}
     void Start()
 	{
@@ -24,20 +29,21 @@ public class CarSpawner : MonoBehaviour
 
 	void SpawnCar()
 	{
-		if (spawnAllowed)
-		{
-			int randIntForCars = Random.Range(0, car.Length);
-			int randIntForPoints = Random.Range(0, spawnPoints.Length);
-			
-			Instantiate(car[randIntForCars], spawnPoints[randIntForPoints].position, spawnPoints[randIntForPoints].rotation);
-			StartCoroutine(FlashAlertIcon(spawnPoints[randIntForPoints]));
+		if(spawnAllowed)
+        {
+			int CurrentCarToSpawn = carsOrder[i];
+			int CurrentSpawnPoint = pointsOrder[i];
 
-			numberOfCarsToSpawn--; 
-			if(numberOfCarsToSpawn == 0)
+			Instantiate(car[CurrentCarToSpawn], spawnPoints[CurrentSpawnPoint].position, spawnPoints[CurrentSpawnPoint].rotation);
+			StartCoroutine(FlashAlertIcon(spawnPoints[CurrentSpawnPoint]));
+
+			i++;
+			if(i == numberOfCars)
             {
 				spawnAllowed = false;
-			}
+            }
 		}
+		
 	}
 
 	IEnumerator FlashAlertIcon(Transform parentTransform)
