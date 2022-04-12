@@ -11,6 +11,7 @@ TagManager:
   - Point
   - arrow
   - Arrow
+  - Boundaries
   layers:
   - Default
   - TransparentFX
