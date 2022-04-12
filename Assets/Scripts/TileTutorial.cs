@@ -15,16 +15,20 @@ public class TileTutorial : MonoBehaviour
     }
     void OnMouseDown()
     {
-        transform.Rotate(0, 0, -90f);
-        tileSound.Play();
-        if (isGameStoped == true)
+        if ( Time.timeScale == 1) // WHEN GAME IS NOT PAUSE
         {
-            if (transform.rotation.eulerAngles.z == correctRotation)
+            transform.Rotate(0, 0, -90f);
+            tileSound.Play();
+            if (isGameStoped == true)
             {
-                isGameStoped = false;
-                Time.timeScale = 1;
-                alertMessage.SetActive(false);
+                if (transform.rotation.eulerAngles.z == correctRotation)
+                {
+                    isGameStoped = false;
+                    Time.timeScale = 1;
+                    alertMessage.SetActive(false);
+                }
             }
+
         }
     }
   
