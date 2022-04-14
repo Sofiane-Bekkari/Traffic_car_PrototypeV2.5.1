@@ -16,7 +16,6 @@ public class TileRotation : MonoBehaviour
         {
             transform.Rotate(0, 0, -90f);
             tileSound.Play();
-            Debug.Log("Is not paused");
            
         }
     }
