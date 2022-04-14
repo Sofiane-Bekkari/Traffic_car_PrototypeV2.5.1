@@ -1,9 +1,11 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
-{ 
+{
+   
     public IEnumerator LoadGameOverScene ()
     {
         yield return new WaitForSeconds(0.8f);
