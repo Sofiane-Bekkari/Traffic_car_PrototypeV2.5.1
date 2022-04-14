@@ -36,12 +36,26 @@ public class GameManager : MonoBehaviour
         int lastLevelIndex = PlayerPrefs.GetInt("Last_Level") ;
         SceneManager.LoadScene(lastLevelIndex);
     }
-
-    public void saveAsLastLevelPlayed()
+    public void loadLastLevelUnlocked()
     {
-        PlayerPrefs.SetInt("Last_Level", SceneManager.GetActiveScene().buildIndex);
+        int lastEvelUnlocked = PlayerPrefs.GetInt("Last_Level_unlocked");
+        SceneManager.LoadScene(lastEvelUnlocked + 4);
     }
-    
+    public void loadMainMenuScene()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
+    void saveAsLastLevelPlayed()
+    {
+        PlayerPrefs.SetInt("Last_Level", SceneManager.GetActiveScene().buildIndex);   
+    }
+    void UnlockNextLevel()
+    {
+        int lastEvelUnlocked = PlayerPrefs.GetInt("Last_Level_unlocked") ;      
+        PlayerPrefs.SetInt("Last_Level_unlocked", lastEvelUnlocked + 1);
+        
+    }
     public void LosingEvent()
     {
         saveAsLastLevelPlayed();
@@ -51,6 +65,7 @@ public class GameManager : MonoBehaviour
     public void WinningEvent()
     {
         saveAsLastLevelPlayed();
+        UnlockNextLevel();
         StartCoroutine(LoadWinningScene());
     }
 }

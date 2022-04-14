@@ -25,7 +25,7 @@ public class TutorialManager : MonoBehaviour
             popUpTuto[1].SetActive(false);
             popUpTuto[2].SetActive(true);
             popUpTuto[3].SetActive(true);
-            Debug.Log("INDEX IS 1");
+            //Debug.Log("INDEX IS 1");
        }
        else if (indexPop == 3)
         {
@@ -35,7 +35,7 @@ public class TutorialManager : MonoBehaviour
             popUpTuto[3].SetActive(false);
             panelTuto.SetActive(false);
             Time.timeScale = 1f; // BACK TIME TO NORMAL
-            Debug.Log("INDEX IS 3");
+          //  Debug.Log("INDEX IS 3");
 
         }
       
