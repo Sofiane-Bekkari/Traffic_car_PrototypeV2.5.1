@@ -838,7 +838,7 @@ MonoBehaviour:
   carsTotalTxt: {fileID: 1807777525}
   numberOfCarsVariantTxt: {fileID: 1890046666}
   numberOfPointsVariantTxt: {fileID: 1131115609}
-  spawnDetails: {fileID: 11400000, guid: c4b5221732e3d3649a9bcd80bd7b127e, type: 2}
+  spawnDetails: {fileID: 11400000, guid: 7cfc469d353ac484c9d750ea974cc666, type: 2}
 --- !u!4 &682348018
 Transform:
   m_ObjectHideFlags: 0

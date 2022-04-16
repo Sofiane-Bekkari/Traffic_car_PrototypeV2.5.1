@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 174b1fa2e007d8b4b9c80eb6f0ed872e, type: 3}
   m_Name: LvL 6
   m_EditorClassIdentifier: 
-  totalCarsNumber: 0
-  carsOrder: 
-  spawnOrder: 
+  totalCarsNumber: 6
+  carsOrder: 020000000100000001000000000000000200000000000000
+  spawnOrder: 020000000300000001000000030000000300000001000000
