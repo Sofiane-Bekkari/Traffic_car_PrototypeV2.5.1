@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2747251654051910842}
   - component: {fileID: 2747251654051910847}
   - component: {fileID: 2747251654051910846}
-  - component: {fileID: 1412981542}
+  - component: {fileID: 2106115416}
   m_Layer: 0
   m_Name: Red_Car
   m_TagString: Car
@@ -149,7 +149,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.576489, y: 0.8041575}
   m_EdgeRadius: 0
---- !u!82 &1412981542
+--- !u!82 &2106115416
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -205,7 +205,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0.92
       inSlope: 0
       outSlope: 0
       tangentMode: 0

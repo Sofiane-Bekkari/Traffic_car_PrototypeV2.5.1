@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2747251654051910842}
   - component: {fileID: 2747251654051910847}
   - component: {fileID: 2747251654051910846}
-  - component: {fileID: 3177831373392801152}
+  - component: {fileID: 246314306}
   m_Layer: 0
   m_Name: Blue_Car
   m_TagString: Car
@@ -83,7 +83,7 @@ SpriteRenderer:
   m_Size: {x: 1.68, y: 1.03}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &2747251654051910842
@@ -149,7 +149,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.68, y: 1.03}
   m_EdgeRadius: 0
---- !u!82 &3177831373392801152
+--- !u!82 &246314306
 AudioSource:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

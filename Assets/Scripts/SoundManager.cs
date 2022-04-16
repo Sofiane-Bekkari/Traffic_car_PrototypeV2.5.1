@@ -6,75 +6,85 @@ using UnityEngine.UI;
 
 public class SoundManager : MonoBehaviour
 {
-    [SerializeField] public Slider volumeSlider;
-    [SerializeField] public Toggle soundFx;
-    [SerializeField] public int soundFxIsOn = 1;
-    public AudioSource[] effectSounds; 
-    public AudioSource backgroundSounds; 
+    public static SoundManager Instance; // WHOLE SOUNDMANAGER INSTANCE
+    public Toggle _toggle; // TOGGLE UI
+    public Slider _slider; // SLIDER UI
+    [SerializeField] public AudioSource _musicSource; // BACKGROUND MUSIC
+    [SerializeField] public AudioSource[] _effectSource; // LIST SFX
 
-
-    // Start is called before the first frame update
-    void Awake()
+    void Awake() // BEFORE EVERYTHING
     {
-        if (!PlayerPrefs.HasKey("musicVolume") && !PlayerPrefs.HasKey("soundFxs"))
+        if(Instance == null) // IF NO INSTANCE ON SCENE
         {
-            PlayerPrefs.SetFloat("musicVolume", 1f);
-            PlayerPrefs.SetInt("soundFxs", 1);
-            Load();
-          
+            Instance = this; // MAKE THIS AN INSTENCE 
+            DontDestroyOnLoad(gameObject); // NOT DESTROY ON LOAD A NEW SCENE
         }
         else
         {
-            Load();
+            Destroy(gameObject); // KILL THIS INSTANCE
         }
+
+        int isToggle = PlayerPrefs.GetInt("ToggleBool"); // GET VALUE FOR TOGGLE
+        float vol = PlayerPrefs.GetFloat("musicVolume"); // GET VALUE FOR SILDER
+
+        LoadValue(isToggle); // INITIALIZE UI TOGGLE BOOL 
+        ChangeMusicVolume(vol); // INITIALIZE UI SLIDER VOLUME
     }
 
-    // CHANGE VOLUME
-    public void ChangeVolume()
+    // GET ALL SFX ON/OFF
+    public void SoundMuteOnOff()
     {
-        backgroundSounds.volume = volumeSlider.value;
-        Save();
-    }
-
-    // TOGGLE
-    public void ToggleSoundFx()
-    {
-        
-        if (!soundFx.isOn)
+        for(int i = 0; i < _effectSource.Length; i++) // TRY TO GET ALL SFX
         {
-            soundFxIsOn = 0;
-            for (int i = 0; i < effectSounds.Length; i++)
+            if (!_toggle.isOn) // IF TOGGLE IS NOT ON
             {
-                effectSounds[i].volume = 0f;
-                Save();
+                _effectSource[i].mute = true; // MUTE
+                UpdateValue(); // SAVE VALUE
             }
-
+            else
+            {
+                _effectSource[i].mute = false; // UNMUTE
+                UpdateValue();// SAVE VALUE
+            }
         }
-        if (soundFx.isOn)
+    }
+    void LoadValue(int isToggle) // SET VALUE FOR ON LOAD 
+    {
+        if ( isToggle == 0) // GET VALUE FORM PLAYERPREF AS INT 0/1
         {
-            soundFxIsOn = 1;
-            for (int i = 0; i < effectSounds.Length; i++)
-            {
-                effectSounds[i].volume = 1f;
-                Save();
-               
-            }
+            _toggle.isOn = false; // VALUE 0
+        }
+        else
+        {
+            _toggle.isOn = true; // VALUE 1
+        }
+        //Debug.Log("Loading... " + _toggle.isOn);
+    }
 
+    public void UpdateValue() // KEEP TRACK FOR TOGGLE STATE
+    {
+        if (_toggle.isOn == true)
+        {
+            PlayerPrefs.SetInt("ToggleBool", 1); // STORE AS 1
+            PlayerPrefs.Save(); // SAVE
+        }
+        else
+        {
+            PlayerPrefs.SetInt("ToggleBool", 0); // STORE AS 0
+            PlayerPrefs.Save(); // SAVE
         }
     }
-    // SAVE
-    public void Save()
+    // MASTER VOLUME
+    public void ChangeMasterVolume(float value)
     {
-        PlayerPrefs.SetFloat("musicVolume", volumeSlider.value);  
-        PlayerPrefs.SetInt("soundFxs", (soundFx.isOn ? 1 : 0));
-        //Debug.Log("SoundFX On Save: " + soundFx.isOn);
+        AudioListener.volume = value;   
     }
-    // LOAD
-    public void Load()
+    // BACKGROUND MUSIC VOLUME 
+    public void ChangeMusicVolume(float value) // GET VALUE FROM SLIDER
     {
-        volumeSlider.value = PlayerPrefs.GetFloat("musicVolume");
-        soundFx.isOn = (PlayerPrefs.GetInt("soundFxs") != 0);
-        //Debug.Log("SoundFX On LOAD: " + soundFx.isOn);
+        _musicSource.volume = value; // SET FOR CURRENT VOLUME
+        _slider.value = value; // SET IT FOR SLIDER ON LOAD
+        PlayerPrefs.SetFloat("musicVolume", value); // STORE IT 
+        PlayerPrefs.Save(); // SAVE IT
     }
-
 }

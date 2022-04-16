@@ -8523,7 +8523,6 @@ MonoBehaviour:
   - {fileID: 377640272}
   - {fileID: 1120966919}
   - {fileID: 176815691}
-  - {fileID: 176815691}
   backgroundSounds: {fileID: 1450038932}
 --- !u!4 &2014940552
 Transform:
