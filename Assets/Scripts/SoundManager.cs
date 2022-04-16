@@ -87,4 +87,14 @@ public class SoundManager : MonoBehaviour
         PlayerPrefs.SetFloat("musicVolume", value); // STORE IT 
         PlayerPrefs.Save(); // SAVE IT
     }
+    // CHANGE VOLUME IN SOME CASES
+    public void ChangeVolumeInCase(float value)
+    {
+        _musicSource.volume = value; // SET FOR CURRENT VOLUME
+    }
+    // CHANGING PITCH FOR MUSIC
+    public void ChangePitchMusic(float pitch)
+    {
+        _musicSource.pitch = pitch;
+    }
 }
