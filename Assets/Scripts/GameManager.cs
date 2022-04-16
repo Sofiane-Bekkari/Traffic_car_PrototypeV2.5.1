@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(0.8f);
         SceneManager.LoadScene("GameOverScene");
-        SoundManager.Instance.ChangePitchMusic(0.3f);
+        SoundManager.Instance.ChangePitchMusic(0.3f); // CHANGE PITCH ON GAME OVER
     }
 
     public IEnumerator LoadWinningScene()
@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
     {
         int nextLevelIndex = PlayerPrefs.GetInt("Last_Level") + 1;
         SceneManager.LoadScene(nextLevelIndex);
+        SoundManager.Instance.ChangeMusicVolume(PlayerPrefs.GetFloat("musicVolume")); // CHANGER IT BACK
     }
 
     public void LoadSelectLevelScene()
@@ -63,7 +64,6 @@ public class GameManager : MonoBehaviour
     {
         int lastEvelUnlocked = PlayerPrefs.GetInt("Last_Level_unlocked");
         PlayerPrefs.SetInt("Last_Level_unlocked", lastEvelUnlocked + 1);
-        SoundManager.Instance.ChangeMusicVolume(PlayerPrefs.GetFloat("musicVolume")); // CHANGER IT BACK
 
     }
     public void LosingEvent()

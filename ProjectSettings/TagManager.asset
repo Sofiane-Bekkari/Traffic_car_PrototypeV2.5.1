@@ -12,6 +12,7 @@ TagManager:
   - arrow
   - Arrow
   - Boundaries
+  - Slider
   layers:
   - Default
   - TransparentFX

@@ -8,12 +8,13 @@ public class SoundManager : MonoBehaviour
 {
     public static SoundManager Instance; // WHOLE SOUNDMANAGER INSTANCE
     public Toggle _toggle; // TOGGLE UI
-    public Slider _slider; // SLIDER UI
+    [SerializeField] Slider _slider; // SLIDER UI
     [SerializeField] public AudioSource _musicSource; // BACKGROUND MUSIC
     [SerializeField] public AudioSource[] _effectSource; // LIST SFX
 
     void Awake() // BEFORE EVERYTHING
     {
+        
         if(Instance == null) // IF NO INSTANCE ON SCENE
         {
             Instance = this; // MAKE THIS AN INSTENCE 
@@ -83,6 +84,7 @@ public class SoundManager : MonoBehaviour
     public void ChangeMusicVolume(float value) // GET VALUE FROM SLIDER
     {
         _musicSource.volume = value; // SET FOR CURRENT VOLUME
+        //_slider.value = value; // new line code
         _slider.value = value; // SET IT FOR SLIDER ON LOAD
         PlayerPrefs.SetFloat("musicVolume", value); // STORE IT 
         PlayerPrefs.Save(); // SAVE IT
