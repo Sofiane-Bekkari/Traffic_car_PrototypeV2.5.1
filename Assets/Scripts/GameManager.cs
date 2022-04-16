@@ -45,6 +45,7 @@ public class GameManager : MonoBehaviour
         SoundManager.Instance.ChangeMusicVolume(PlayerPrefs.GetFloat("musicVolume")); // CHANGER IT BACK
         SoundManager.Instance.ChangePitchMusic(1f); // CHANGER IT BACK
     }
+
     public void loadLastLevelUnlocked()
     {
         int lastEvelUnlocked = PlayerPrefs.GetInt("Last_Level_unlocked");
@@ -63,8 +64,15 @@ public class GameManager : MonoBehaviour
     void UnlockNextLevel()
     {
         int lastEvelUnlocked = PlayerPrefs.GetInt("Last_Level_unlocked");
+<<<<<<< HEAD
         PlayerPrefs.SetInt("Last_Level_unlocked", lastEvelUnlocked + 1);
 
+=======
+        if(lastEvelUnlocked +4 == SceneManager.GetActiveScene().buildIndex )
+        {
+            PlayerPrefs.SetInt("Last_Level_unlocked", lastEvelUnlocked + 1);
+        }
+>>>>>>> 211a51349702146fce5c5875abe5ee02dea7fff1
     }
     public void LosingEvent()
     {
