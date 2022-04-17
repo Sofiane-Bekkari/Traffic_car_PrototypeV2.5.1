@@ -10,23 +10,23 @@ public class GameManager : MonoBehaviour
     {
         yield return new WaitForSeconds(0.8f);
         SceneManager.LoadScene("GameOverScene");
-        SoundManager.Instance.ChangePitchMusic(0.3f); // CHANGE PITCH ON GAME OVER
+        AudioManager.instance.ChangePitchMusic(0.3f); // CHANGE PITCH ON GAME OVER
     }
 
     public IEnumerator LoadWinningScene()
     {
         yield return new WaitForSeconds(2f);
         SceneManager.LoadScene("WinningScene");
-        SoundManager.Instance.ChangeVolumeInCase(0.1f); // VOLUME ON WINNING SCENE
+        AudioManager.instance.ChangeVolumeInCase(0.1f); // VOLUME ON WINNING SCENE
         yield return new WaitForSeconds(1f);
-        SoundManager.Instance.ChangeVolumeInCase(0.3f); // VOLUME ON WINNING SCENE
+        AudioManager.instance.ChangeVolumeInCase(0.3f); // VOLUME ON WINNING SCENE
     }
 
     public void LoadNextLevel()
     {
         int nextLevelIndex = PlayerPrefs.GetInt("Last_Level") + 1;
         SceneManager.LoadScene(nextLevelIndex);
-        SoundManager.Instance.ChangeMusicVolume(PlayerPrefs.GetFloat("musicVolume")); // CHANGER IT BACK
+        AudioManager.instance.ChangeVolumeInCase(PlayerPrefs.GetFloat("musicVolume")); // VOLUME ON WINNING SCENE
     }
 
     public void LoadSelectLevelScene()
@@ -42,8 +42,8 @@ public class GameManager : MonoBehaviour
     {
         int lastLevelIndex = PlayerPrefs.GetInt("Last_Level") ;
         SceneManager.LoadScene(lastLevelIndex);
-        SoundManager.Instance.ChangeMusicVolume(PlayerPrefs.GetFloat("musicVolume")); // CHANGER IT BACK
-        SoundManager.Instance.ChangePitchMusic(1f); // CHANGER IT BACK
+        //FindObjectOfType<SoundSettings>().ChangeMusicVolume(PlayerPrefs.GetFloat("musicVolume")); // CHANGER IT BACK
+        AudioManager.instance.ChangePitchMusic(1f); // CHANGER IT BACK
     }
 
     public void loadLastLevelUnlocked()
@@ -54,7 +54,7 @@ public class GameManager : MonoBehaviour
     public void loadMainMenuScene()
     {
         SceneManager.LoadScene("MainMenu");
-        SoundManager.Instance.ChangePitchMusic(1f); // CHANGER IT BACK
+        AudioManager.instance.ChangePitchMusic(1f); // CHANGER IT BACK
     }
 
     void saveAsLastLevelPlayed()
@@ -64,15 +64,11 @@ public class GameManager : MonoBehaviour
     void UnlockNextLevel()
     {
         int lastEvelUnlocked = PlayerPrefs.GetInt("Last_Level_unlocked");
-<<<<<<< HEAD
-        PlayerPrefs.SetInt("Last_Level_unlocked", lastEvelUnlocked + 1);
-
-=======
-        if(lastEvelUnlocked +4 == SceneManager.GetActiveScene().buildIndex )
+        if (lastEvelUnlocked + 4 == SceneManager.GetActiveScene().buildIndex)
         {
             PlayerPrefs.SetInt("Last_Level_unlocked", lastEvelUnlocked + 1);
         }
->>>>>>> 211a51349702146fce5c5875abe5ee02dea7fff1
+
     }
     public void LosingEvent()
     {

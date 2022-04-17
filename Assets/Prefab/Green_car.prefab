@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6568572022239680622}
   - component: {fileID: 6568572022239680623}
   - component: {fileID: 2226942867923034245}
+  - component: {fileID: -6697765892442709728}
   m_Layer: 0
   m_Name: Green_car
   m_TagString: Car
@@ -245,3 +246,16 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-6697765892442709728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6568572022239680618}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03c14aa6f4b83df47819ccc3df08a07f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundfx: {fileID: 0}

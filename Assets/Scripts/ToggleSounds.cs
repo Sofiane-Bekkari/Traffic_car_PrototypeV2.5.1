@@ -16,7 +16,7 @@ public class ToggleSounds : MonoBehaviour
     }
     public void Toggle()
     {
-        if (_toggleEffects) SoundManager.Instance.SoundMuteOnOff();
+        if (_toggleEffects) FindObjectOfType<SoundSettings>().SoundMuteOnOff();
     }
 
 }

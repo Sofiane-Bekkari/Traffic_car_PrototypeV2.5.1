@@ -9,7 +9,7 @@ public class SliderVolume : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _slider.onValueChanged.AddListener(val => SoundManager.Instance.ChangeMusicVolume(val));
+        _slider.onValueChanged.AddListener(val => FindObjectOfType<SoundSettings>().ChangeMusicVolume(val));
 
     }
 

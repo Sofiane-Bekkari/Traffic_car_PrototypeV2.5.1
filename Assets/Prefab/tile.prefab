@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 509301363558504674}
   - component: {fileID: 509301363558504677}
   - component: {fileID: 509301363558504676}
+  - component: {fileID: -1035418903561279728}
   m_Layer: 0
   m_Name: tile
   m_TagString: Untagged
@@ -83,7 +84,7 @@ SpriteRenderer:
   m_Size: {x: 2.34, y: 2.34}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!61 &509301363558504674
@@ -124,6 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e744cd24a85f3e44b6e676dae92316a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pausedIsOn: {fileID: 0}
 --- !u!82 &509301363558504676
 AudioSource:
   m_ObjectHideFlags: 0
@@ -180,7 +182,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.3
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -210,7 +212,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 1
+      value: 0.25
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -220,6 +222,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-1035418903561279728
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 509301363558504679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03c14aa6f4b83df47819ccc3df08a07f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundfx: {fileID: 509301363558504676}
 --- !u!1 &509301364250318026
 GameObject:
   m_ObjectHideFlags: 0
