@@ -15,8 +15,8 @@ public class TileTutorial : MonoBehaviour
     }
     void OnMouseDown()
     {
-        if ( Time.timeScale == 1) // WHEN GAME IS NOT PAUSE
-        {
+        //if ( Time.timeScale == 1) // WHEN GAME IS NOT PAUSE
+        //{
             transform.Rotate(0, 0, -90f);
             tileSound.Play();
             if (isGameStoped == true)
@@ -29,7 +29,7 @@ public class TileTutorial : MonoBehaviour
                 }
             }
 
-        }
+        //}
     }
   
     private void OnTriggerEnter2D(Collider2D collision)

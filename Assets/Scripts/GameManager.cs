@@ -31,6 +31,10 @@ public class GameManager : MonoBehaviour
 
     public void LoadSelectLevelScene()
     {
+        if (!PlayerPrefs.HasKey("Last_Level_unlocked"))
+        {
+            PlayerPrefs.SetInt("Last_Level_unlocked", 1); 
+        }
         SceneManager.LoadScene("SelectLevelScene");
     }
     public void SelectLevel(string levelName)
