@@ -24,20 +24,20 @@ EditorBuildSettings:
     path: Assets/Scenes/SelectLevelScene.unity
     guid: f56024e7305df9744bee5489610aa472
   - enabled: 1
-    path: Assets/Scenes/Lvl 1.unity
-    guid: 67a4e7f85967b184a83182bfe3f71520
+    path: Assets/Scenes/Lvl1Rep.unity
+    guid: e0697875da7c7134e9358bc69b48430c
   - enabled: 1
-    path: Assets/Scenes/Lvl 2.unity
-    guid: df1a832549df05040a4598cfd71124d1
+    path: Assets/Scenes/Lvl2Rep.unity
+    guid: 2b738c8ecde5223479f46fbb275b311e
   - enabled: 1
-    path: Assets/Scenes/Lvl 3.unity
-    guid: 7299d4ae41478244092d3669892a1b56
+    path: Assets/Scenes/Lvl3Rep.unity
+    guid: 9b4e3c7d7c076d6478914f256123f217
   - enabled: 1
-    path: Assets/Scenes/Lvl 4.unity
-    guid: c4a15f352e0a1af46a3c1a1879fb80c4
+    path: Assets/Scenes/Lvl4Rep.unity
+    guid: 38816ec2748fdd94d8c766d60954eb9a
   - enabled: 1
-    path: Assets/Scenes/Lvl 5 test.unity
-    guid: f42065c849c60c84cacf2c4ae89550eb
+    path: Assets/Scenes/Lvl5Rep.unity
+    guid: ac9887779964bb444b8687a9bff0ccb9
   - enabled: 1
     path: Assets/Scenes/Lvl 6 test.unity
     guid: 285dd5629d323534eb5f5616685df10b
