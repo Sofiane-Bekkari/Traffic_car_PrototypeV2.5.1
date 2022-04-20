@@ -35,12 +35,7 @@ public class CarsMovement : MonoBehaviour
             Destroy(gameObject, 1f);
         }
 
-        if (collision.gameObject.CompareTag("Boundaries") &&
-           transform.position.x > -16f && transform.position.x < 16f &&
-           transform.position.y > -8f && transform.position.y < 8f)
-        {
-            gameManager.LosingEvent();
-        }
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -49,6 +44,13 @@ public class CarsMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("Tile"))
         {
             StartCoroutine(delayOnTurn(collision.transform.rotation));
+        }
+
+        if (collision.gameObject.CompareTag("Boundaries") &&
+           transform.position.x > -16f && transform.position.x < 16f &&
+           transform.position.y > -8f && transform.position.y < 8f)
+        {
+            gameManager.LosingEvent();
         }
 
         if (collision.gameObject.CompareTag("Arrow"))
