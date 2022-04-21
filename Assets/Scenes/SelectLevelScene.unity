@@ -3165,8 +3165,6 @@ MonoBehaviour:
   - {fileID: 1850192962}
   - {fileID: 420631600}
   - {fileID: 595580413}
-  - {fileID: 0}
-  - {fileID: 0}
   lockedImage: {fileID: -8000334630724502860, guid: 05c1edec84d871648a57b99f59ab2013, type: 3}
 --- !u!1 &1189847290
 GameObject:
