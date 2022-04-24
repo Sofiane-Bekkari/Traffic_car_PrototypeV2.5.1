@@ -6,12 +6,15 @@ using TMPro;
 public class ScoreScript : MonoBehaviour
 {
     public TextMeshProUGUI toatCarsTxt;
+    //public TextMeshProUGUI toatClickTxt;
     int carsLeft = 0;
     int carsNoneSpawn;
 
     void Start()
     {
-        carsNoneSpawn = GameObject.FindGameObjectsWithTag("Car").Length; // GET NUMBER OF CAR 
+        carsNoneSpawn = GameObject.FindGameObjectsWithTag("Car").Length; // GET NUMBER OF CAR
+        //int getNumClick = PlayerPrefs.GetInt("ClickOnTile");
+        //toatClickTxt.text = "" + getNumClick;
 
         carsLeft = CarSpawner.numberOfCars;
         if ( carsLeft > 0) // IF THERE CAR FROM SPAWNER

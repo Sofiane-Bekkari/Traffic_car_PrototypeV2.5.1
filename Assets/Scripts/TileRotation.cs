@@ -6,6 +6,7 @@ public class TileRotation : MonoBehaviour
 {
     private AudioSource tileSound;
     public PauseMenu pausedIsOn;
+    public bool CountClick = false;
     private void Start()
     {
         tileSound = GetComponent<AudioSource>();
@@ -16,6 +17,9 @@ public class TileRotation : MonoBehaviour
         {
             transform.Rotate(0, 0, -90f);
             tileSound.Play();
+            CountClick = true;
+            //FindObjectOfType<CountClickOnTile>().CounterClick(CountClick);
+
            
         }
     }
