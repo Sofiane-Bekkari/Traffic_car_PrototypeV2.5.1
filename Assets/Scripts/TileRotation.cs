@@ -18,7 +18,7 @@ public class TileRotation : MonoBehaviour
             transform.Rotate(0, 0, -90f);
             tileSound.Play();
             CountClick = true;
-            //FindObjectOfType<CountClickOnTile>().CounterClick(CountClick);
+            FindObjectOfType<CountClickOnTile>().CounterClick(CountClick);
 
            
         }
